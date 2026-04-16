@@ -1,0 +1,26 @@
+[
+  {
+    "id": "builtin-date",
+    "trigger": "-date",
+    "type": "date",
+    "label": "打印当前日期",
+    "value": "date",
+    "enabled": true
+  },
+  {
+    "id": "builtin-bd",
+    "trigger": "-bd",
+    "type": "url",
+    "label": "打开百度",
+    "value": "https://www.baidu.com",
+    "enabled": true
+  },
+  {
+    "id": "builtin-wx",
+    "trigger": "-wx",
+    "type": "app",
+    "label": "打开微信",
+    "value": "C:\\Program Files\\Tencent\\WeChat\\WeChat.exe",
+    "enabled": true
+  }
+]

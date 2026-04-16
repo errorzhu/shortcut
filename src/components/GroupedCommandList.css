@@ -1,0 +1,365 @@
+.grouped-list-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grouped-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.grouped-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.grouped-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.grouped-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.grouped-count {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.create-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.create-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 20px var(--accent-glow), 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.grouped-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Group Section */
+.group-section {
+  margin-bottom: 20px;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.group-header:hover {
+  background: var(--bg-tertiary);
+}
+
+.group-header.group-selected {
+  background: var(--accent);
+  color: white;
+}
+
+.group-header.group-selected .group-name,
+.group-header.group-selected .collapse-btn,
+.group-header.group-selected .group-count {
+  color: white;
+}
+
+.group-header.group-selected .group-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.group-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.group-color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.group-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.group-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.group-commands {
+  padding: 16px 0;
+}
+
+.group-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 20px;
+}
+
+/* Command Cards */
+.cmd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.cmd-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 14px;
+  transition: all 0.2s;
+}
+
+.cmd-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cmd-card.cmd-disabled {
+  opacity: 0.6;
+}
+
+.cmd-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cmd-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.builtin-badge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.cmd-usage {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.cmd-trigger code {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 14px;
+  color: var(--accent);
+  background: var(--bg-tertiary);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.cmd-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: 8px;
+}
+
+.cmd-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.cmd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.cmd-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+.cmd-value-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cmd-value-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.cmd-value {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.cmd-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.action-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.action-toggle:hover {
+  background: var(--bg-tertiary);
+}
+
+.action-btns {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.action-btn.action-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}

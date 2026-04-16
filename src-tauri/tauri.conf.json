@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "shortcut",
+  "version": "0.1.0",
+  "identifier": "com.shortcut.dev",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "shortcut",
+        "width": 960,
+        "height": 640,
+        "minWidth": 800,
+        "minHeight": 500,
+        "resizable": true,
+        "decorations": true,
+        "transparent": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  },
+ "plugins": {
+  "shell": {
+    "open": true
+  },
+  "tray-icon": {
+    "id": "main_tray",
+    "icon": "icons/icon.ico",
+    "tooltip": "Shortcut - 快捷命令工具"
+  }
+}
+}

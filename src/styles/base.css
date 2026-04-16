@@ -1,0 +1,103 @@
+@import '../fonts/fonts.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 背景色 - 提升亮度，从纯黑改为深蓝灰 */
+  --bg-primary: #1a1d29;
+  --bg-secondary: #232736;
+  --bg-card: #2a2f3e;
+  --bg-hover: #32384a;
+  --bg-active: #3a4056;
+  
+  /* 边框色 - 增加对比度 */
+  --border: #3d4459;
+  --border-bright: #4f5875;
+  --border-color: #3d4459;
+  
+  /* 强调色 - 更明亮的紫蓝色 */
+  --accent: #8b7bf7;
+  --accent-hover: #7a6ae8;
+  --accent-glow: rgba(139, 123, 247, 0.35);
+  --accent-dim: #5a4fc0;
+  
+  /* 功能色 - 提升饱和度 */
+  --green: #4ade80;
+  --green-glow: rgba(74, 222, 128, 0.25);
+  --red: #fb7185;
+  --red-glow: rgba(251, 113, 133, 0.25);
+  --yellow: #fbbf24;
+  
+  /* 文字色 - 大幅提升对比度 */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* 字体 */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+  
+  /* 圆角 */
+  --radius: 8px;
+  --radius-lg: 12px;
+  
+  /* 新增 - 第三层背景 */
+  --bg-tertiary: #2f3547;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 2px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Shared keyframes */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
