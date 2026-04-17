@@ -21,6 +21,10 @@
 
 **Shortcut** 是一款跨平台的桌面快捷命令工具，通过简单的触发词即可快速执行各种操作，提升您的工作效率。
 
+<p align="center">
+  <img src="resource/example.png" alt="Shortcut 示例" width="600">
+</p>
+
 ### ✨ 核心特性
 
 - 🚀 **快捷触发** - 输入触发词（如 `-date`）即可自动执行命令
