@@ -256,6 +256,22 @@ fn execute_action(cmd_type: &str, value: &str, trigger_len: usize) {
             let _ = SysCommand::new("open").arg(value).spawn();
         }
 
+        "folder" => {
+            // Open folder in file explorer
+            #[cfg(target_os = "windows")]
+            {
+                let _ = SysCommand::new("explorer")
+                    .arg(value)
+                    .spawn();
+            }
+
+            #[cfg(target_os = "macos")]
+            let _ = SysCommand::new("open").arg(value).spawn();
+
+            #[cfg(target_os = "linux")]
+            let _ = SysCommand::new("xdg-open").arg(value).spawn();
+        }
+
         "text" => {
             let expanded = expand_text_variables(value);
             thread::sleep(std::time::Duration::from_millis(100));

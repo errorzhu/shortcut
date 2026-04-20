@@ -16,6 +16,7 @@ const TYPE_OPTIONS: { value: CommandType; label: string; hint: string }[] = [
   { value: "date", label: "📅 日期", hint: "触发时输出当前日期/时间到剪贴板" },
   { value: "url", label: "🌐 网址", hint: "触发时在默认浏览器打开指定 URL" },
   { value: "app", label: "📦 应用", hint: "触发时启动指定的程序（填写完整路径）" },
+  { value: "folder", label: "📁 文件夹", hint: "触发时在文件资源管理器中打开指定文件夹" },
   { value: "text", label: "📝 文本", hint: "触发时将预设文本复制到剪贴板" },
 ];
 
@@ -97,6 +98,7 @@ export default function CommandEditor({ command, groups, onSave, onCancel, defau
     date: "date（输出 YYYY-MM-DD）或 datetime（输出完整时间）",
     url: "https://www.example.com",
     app: "C:\\Program Files\\App\\app.exe",
+    folder: "C:\\Users\\Username\\Documents",
     text: "输入要展开的文本内容，支持 {{date}} 等变量...",
     script: "powershell -Command ...",
   };
@@ -292,9 +294,10 @@ export default function CommandEditor({ command, groups, onSave, onCancel, defau
             <span className="preview-trigger">{trigger || "-?"}</span>
             <span className="preview-arrow">→</span>
             <span className="preview-action">
-              {type === "date" && "📅 " + (new Date().toISOString().split("T")[0])}
+            {type === "date" && "📅 " + (new Date().toISOString().split("T")[0])}
               {type === "url" && "🌐 " + (value || "https://...")}
               {type === "app" && "📦 启动 " + (label || "应用")}
+              {type === "folder" && "📁 打开文件夹 " + (label || value || "...")}
               {type === "text" && (
                 <span className="text-preview">
                   <span className="preview-icon">📋</span>

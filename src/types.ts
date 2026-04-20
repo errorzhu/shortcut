@@ -1,4 +1,4 @@
-export type CommandType = "text" | "date" | "url" | "app" | "script";
+export type CommandType = "text" | "date" | "url" | "app" | "folder" | "script";
 
 export interface CommandGroup {
   id: string;

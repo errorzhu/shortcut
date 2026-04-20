@@ -1,5 +1,5 @@
 import { Command } from "./types";
-import { openUrl, launchApp } from "./tauriCommands";
+import { openUrl, launchApp, openFolder } from "./tauriCommands";
 import { formatDate, formatDateTime, expandTextVariables } from "./commandStore";
 
 // Robust Tauri detection matching other modules
@@ -55,6 +55,13 @@ export async function executeCommand(
             output: command.value,
           };
         }
+        case "folder": {
+          return {
+            success: true,
+            message: `已打开文件夹 ${command.label}`,
+            output: command.value,
+          };
+        }
         case "text": {
           return {
             success: true,
@@ -100,6 +107,15 @@ export async function executeCommand(
         return {
           success: true,
           message: `已启动 ${command.label}`,
+          output: command.value,
+        };
+      }
+
+      case "folder": {
+        await openFolder(command.value);
+        return {
+          success: true,
+          message: `已打开文件夹 ${command.label}`,
           output: command.value,
         };
       }

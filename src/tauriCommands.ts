@@ -64,6 +64,15 @@ export async function launchApp(appPath: string): Promise<void> {
   }
 }
 
+export async function openFolder(folderPath: string): Promise<void> {
+  if (isTauri) {
+    const { Command } = await import("@tauri-apps/plugin-shell");
+    await Command.create("open-folder", [folderPath]).execute();
+  } else {
+    console.log(`[mock] open folder: ${folderPath}`);
+  }
+}
+
 export async function updateTauriCommands(
   commands: { id: string; trigger: string; type: string; label: string; value: string; enabled: boolean }[]
 ): Promise<void> {

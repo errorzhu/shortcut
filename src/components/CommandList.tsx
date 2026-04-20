@@ -1,5 +1,5 @@
 import { Command } from "../types";
-import { Plus, Edit2, Trash2, Globe, Calendar, AppWindow, Type, Lock, ToggleLeft, ToggleRight } from "lucide-react";
+import { Plus, Edit2, Trash2, Globe, Calendar, AppWindow, Type, Lock, ToggleLeft, ToggleRight, FolderOpen } from "lucide-react";
 import "./CommandList.css";
 
 interface Props {
@@ -14,6 +14,7 @@ const TYPE_CONFIG = {
   date: { icon: Calendar, label: "日期", color: "#ffd166" },
   url: { icon: Globe, label: "网址", color: "#7c6af7" },
   app: { icon: AppWindow, label: "应用", color: "#3ddc84" },
+  folder: { icon: FolderOpen, label: "文件夹", color: "#f5a623" },
   text: { icon: Type, label: "文本", color: "#60c8ff" },
   script: { icon: Type, label: "脚本", color: "#ff9f7f" },
 };
